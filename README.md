@@ -1,2 +1,2 @@
 # Workshop-Android-4SLEAM
-Workshop Android
+This Android App is developed in a workshop series for 4SLEAM class in Esprit university
