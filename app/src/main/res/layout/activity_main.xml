@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,6 +9,17 @@
 
     tools:context="marwendoukh.workshopandroid4sleam.MainActivity">
 
+
+    <ImageView
+        android:id="@+id/weatherbackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
     <TextView
         android:id="@+id/temp"
         android:layout_width="wrap_content"
@@ -27,5 +38,5 @@
         android:text="desc"
         android:textSize="40sp" />
 
-
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

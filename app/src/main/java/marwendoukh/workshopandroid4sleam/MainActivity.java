@@ -2,6 +2,7 @@ package marwendoukh.workshopandroid4sleam;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -9,6 +10,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView temp, description;
 
+
+    ImageView image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         // link to java var
         temp = (TextView) findViewById(R.id.temp);
         description = (TextView) findViewById(R.id.description);
-
+        image = (ImageView) findViewById(R.id.weatherbackground);
 
         JsonObjectRequest RequestToWebService = new JsonObjectRequest(Request.Method.GET,
                 weatherWebserviceURL, null, new Response.Listener<JSONObject>() {
@@ -65,7 +73,27 @@ public class MainActivity extends AppCompatActivity {
                     } else if (jsonObj.getString("main").equals("Snow")) {
                         backgroundImage = "https://marwendoukh.files.wordpress.com/2017/01/snow-wallpaper1.jpg";
                     }
-*/
+                    */
+                    Glide
+                            .with(getApplicationContext())
+                            .load("http://www.extremetech.com/wp-content/uploads/2011/06/firefox-logo-huge.jpg")
+                            .centerCrop()
+                            .crossFade()
+                            .listener(new RequestListener<String, GlideDrawable>() {
+                                @Override
+                                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                                    System.out.println(e.toString());
+                                    return false;
+                                }
+
+                                @Override
+                                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                                    return false;
+                                }
+                            })
+                            .into(image);
+
+
 
 
                 } catch (JSONException e) {
