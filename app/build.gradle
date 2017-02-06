@@ -33,4 +33,7 @@ dependencies {
     // library to load images from links and display it in the App
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
+    /// adding Cloudant library
+    compile group: 'com.cloudant', name: 'cloudant-sync-datastore-android', version: 'latest.release'
+    compile group: 'com.cloudant', name: 'cloudant-sync-datastore-javase', version: 'latest.release'
 }

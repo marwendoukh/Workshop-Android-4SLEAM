@@ -3,10 +3,12 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
-
+        // change version to 'latest.integration' to build from latest snapshot release
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -15,6 +17,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenLocal()
+        mavenCentral()
     }
 }
 
