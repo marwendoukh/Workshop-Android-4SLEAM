@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public class GetDataFromCloudant extends AppCompatActivity {
 
     // le lien du Webservice
-    String CloudantURL = "https://aa7976c5-0434-406c-a1ec-28efb22f8c08-bluemix.cloudant.com/facialemotions/_design/facialemotion/_view/facialemotion?limit=20&reduce=false";
+    String CloudantURL = "https://username.cloudant.com/facialemotions/_design/DBname";
     JSONObject jsonObj;
 
 

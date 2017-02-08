@@ -24,7 +24,7 @@ public class SendToCloudant extends AppCompatActivity {
         setContentView(R.layout.activity_send_to_cloudant);
 
 
-        String url = "https://aa7976c5-0434-406c-a1ec-28efb22f8c08-bluemix.cloudant.com/facialemotions";
+        String url = "https://username.cloudant.com/DBname";
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         HashMap<String, Object> map = new HashMap<String, Object>();
